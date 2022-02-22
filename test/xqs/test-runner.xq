@@ -10,9 +10,9 @@ import module namespace test="http://exist-db.org/xquery/xqsuite" at "resource:o
 import module namespace tests="http://www.obdurodon.org/apps/exist-sandbox/tests" at "test-suite.xql";
 
 declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
-declare option output:method "json";
-declare option output:media-type "application/json";
+declare option output:method "xml";
+declare option output:media-type "application/xml";
 
 test:suite(
-  inspect:module-functions(xs:anyURI("test-suite.xql"))
+  inspect:module-functions(xs:anyURI("../../modules/test.xqm"))
 )
