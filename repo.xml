@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta 
+  xmlns="http://exist-db.org/xquery/repo">
+  <description>Test eXist-db features</description>
+  <author>djb</author>
+  <website>http://www.obdurodon.org</website>
+  <status>alpha</status>
+  <license>MIT</license>
+  <copyright>true</copyright>
+  <type>application</type>
+  <target>exist-sandbox</target>
+  <prepare>pre-install.xql</prepare>
+  <finish>post-install.xql</finish>
+</meta>
