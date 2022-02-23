@@ -15,4 +15,4 @@ declare option output:media-type "application/xml";
 
 test:suite(
   inspect:module-functions(xs:anyURI("test-suite.xql"))
-)
+) 
