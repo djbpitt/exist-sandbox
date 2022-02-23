@@ -14,5 +14,5 @@ declare option output:method "xml";
 declare option output:media-type "application/xml";
 
 test:suite(
-  inspect:module-functions(xs:anyURI("../../modules/test.xqm"))
+  inspect:module-functions(xs:anyURI("test-suite.xql"))
 )
