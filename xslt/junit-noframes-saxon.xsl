@@ -74,12 +74,13 @@
             <title><xsl:value-of select="$TITLE"/></title>
     <style type="text/css">
       body {
-        font:normal 68% verdana,arial,helvetica;
+        /* font:normal 68% verdana,arial,helvetica; */
+        font:normal verdana,arial,helvetica;
         color:#000000;
       }
-      table tr td, table tr th {
+      /* table tr td, table tr th {
           font-size: 68%;
-      }
+      } */
       table.details tr th{
         font-weight: bold;
         text-align:left;
@@ -201,7 +202,9 @@
                 <xsl:variable name="errorCount" select="sum($testsuites-in-package/@errors)"/>
                 <xsl:variable name="failureCount" select="sum($testsuites-in-package/@failures)"/>
                 <xsl:variable name="skippedCount" select="sum($testsuites-in-package/@skipped)" />
-                <xsl:variable name="timeCount" select="sum($testsuites-in-package/@time)"/>
+                <!-- 2022-02-24 djb fix type error -->
+                <!-- <xsl:variable name="timeCount" select="sum($testsuites-in-package/@time)"/> -->
+                <xsl:variable name="timeCount" select="sum($testsuites-in-package/@time ! xs:dayTimeDuration(.))"/>
 
                 <!-- write a summary for the package -->
                 <tr valign="top">
@@ -540,7 +543,9 @@
 
 <xsl:template name="display-time">
     <xsl:param name="value"/>
-    <xsl:value-of select="format-number($value,'0.000')"/>
+    <!-- 2022-02-24 djb fix type error -->
+    <!-- <xsl:value-of select="format-number($value,'0.000')"/> -->
+    <xsl:value-of select="seconds-from-duration(xs:duration($value))"/>
 </xsl:template>
 
 <xsl:template name="display-percent">
