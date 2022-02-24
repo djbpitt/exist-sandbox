@@ -297,7 +297,7 @@
         <xsl:variable name="skippedCount" select="sum(testsuite/@skipped)" />
         <!-- 2022-02-24 djb modified because cannot convert duration to double -->
         <!-- <xsl:variable name="timeCount" select="sum(testsuite/@time)"/> -->
-        <xsl:variable name="timeCount" select="testsuite/@time => string-join(', ')"/>
+        <xsl:variable name="timeCount" select="sum(testsuite/@time ! xs:dayTimeDuration(.))"/>
         <xsl:variable name="successRate" select="($testCount - $failureCount - $errorCount) div $testCount"/>
         <table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
         <tr valign="top">

@@ -1,0 +1,7 @@
+<testsuites>
+    <testsuite package="http://www.obdurodon.org/apps/exist-sandbox/tests" timestamp="2022-02-24T16:33:14.608-05:00" tests="3" failures="0" errors="0" pending="0" time="PT0.039S">
+        <testcase name="pub-info" class="tests:pub-info"/>
+        <testcase name="square-10" class="tests:square-10"/>
+        <testcase name="square-11" class="tests:square-11"/>
+    </testsuite>
+</testsuites>
