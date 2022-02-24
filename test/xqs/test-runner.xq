@@ -13,6 +13,8 @@ declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
 declare option output:method "xml";
 declare option output:media-type "application/xml";
 
-test:suite(
+let $result as element(testsuites) := test:suite(
   inspect:module-functions(xs:anyURI("test-suite.xql"))
 ) 
+let $store-result as xs:string? := xmldb:store('/db/apps/exist-sandbox/test/xqs', 'test-results.xml', $result)
+return $result
